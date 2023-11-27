@@ -56,8 +56,8 @@ inquirer
         }
     ])
     .then(answers => {
-        const { text, color } = answers;
-        const svgContent = generateLogo(text, color);
+        const { text, color, shape } = answers;
+        const svgContent = generateLogo(text, color, shape);
         saveLogoAsSVGAndImage(svgContent);
     })
     .catch(error => {
