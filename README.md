@@ -42,3 +42,5 @@ Then an SVG file is created named `logo.svg`
 and the output text "Generated logo.svg" is printed in the command line
 WHEN I open the `logo.svg` file in a browser
 THEN I am shown a 300x200 pixel image that matches the criteria I entered
+
+https://youtu.be/ddE81sraskY 
