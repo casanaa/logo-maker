@@ -1,6 +1,7 @@
 const fs = require('fs');
 const inquirer = require("inquirer");
-const svg2img = require('svg2img');
+const { generateSVG } = require("./lib/generateSVG");
+const { generateShape } = require("./lib/generateShape");
 
 // Function to generate the SVG logo based on user input
 function generateLogo(text, color, fontSize) {
@@ -25,7 +26,7 @@ function saveLogoAsSVGAndImage(svgContent, outputPath) {
         } else {
             // Save the PNG image
             fs.writeFileSync(`${outputPath}.png`, buffer);
-            console.log('Logo and image files saved successfully!');
+            console.log('Logo created and saved!');
         }
     });
 }
@@ -36,23 +37,23 @@ inquirer
         {
             type: 'input',
             name: 'text',
-            message: 'Enter logo text:'
+            message: 'Choose logo text:'
         },
         {
             type: 'input',
             name: 'text-color',
-            message: 'Enter text color (hex format, e.g., #FF5733):'
+            message: 'Choose text color:'
         },
         {
             type: 'list',
             name: 'pixel-image',
-            message: 'Choose a pixel image.',
+            message: 'Choose logo shape:',
             choices: ['Square', 'Triangle', 'Cricle'],
         },
         {
             type: 'input',
             name: 'shape-color',
-            message: 'Enter shape color :'
+            message: 'Choose shape color :'
         }
     ])
     .then(answers => {
