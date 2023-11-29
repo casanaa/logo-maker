@@ -1,7 +1,6 @@
 const fs = require('fs');
 const inquirer = require("inquirer");
-const { generateSVG } = require("./lib/generateSVG");
-const { generateShape } = require("./lib/generateShape");
+const svg2img = require('svg2img');
 
 // Function to generate the SVG logo based on user input
 function generateLogo(text, color, fontSize) {
